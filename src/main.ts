@@ -1,6 +1,5 @@
 import { createApp } from "vue";
 import { setupRouter } from "@/router";
-import { setupStore } from "@/store";
 import {
   setupCustomComponents,
   setupGlobalMethods,
@@ -24,7 +23,6 @@ async function bootStrap() {
   setupDirectives(app);
 
   // 挂载状态管理
-  await setupStore(app);
 
   // 挂载路由
   await setupRouter(app);

@@ -1,22 +1,8 @@
-<script setup lang="ts">
-import { zhCN, dateZhCN } from 'naive-ui'
-import { useThemeStore } from '@/store'
-const theme = useThemeStore()
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <n-config-provider
-    :theme="theme.naiveTheme"
-    :theme-overrides="theme.naiveThemeOverrides"
-    :locale="zhCN"
-    :date-locale="dateZhCN"
-    w-1280px
-    flex
-  >
-    <Welcome />
-    <RouterView />
-    <ThemeSetting />
-  </n-config-provider>
+  <Welcome />
+  <RouterView />
 </template>
 
 <style>

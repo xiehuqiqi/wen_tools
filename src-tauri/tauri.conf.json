@@ -7,7 +7,7 @@
     "distDir": "../dist"
   },
   "package": {
-    "productName": "wen",
+    "productName": "wen_tools",
     "version": "../package.json"
   },
   "tauri": {
@@ -120,10 +120,6 @@
       "active": true,
       "category": "DeveloperTool",
       "copyright": "",
-      "deb": {
-        "depends": []
-      },
-      "externalBin": [],
       "icon": [
         "icons/32x32.png",
         "icons/128x128.png",
@@ -134,22 +130,9 @@
         "icons/StoreLogo.png"
       ],
       "identifier": "wen.suwenmao.wentools",
-      "longDescription": "",
-      "macOS": {
-        "entitlements": null,
-        "exceptionDomain": "",
-        "frameworks": [],
-        "providerShortName": null,
-        "signingIdentity": null
-      },
-      "publisher": "",
-      "resources": [],
-      "shortDescription": "",
       "targets": "all",
       "windows": {
         "allowDowngrades": true,
-        "certificateThumbprint": null,
-        "digestAlgorithm": null,
         "nsis": {
           "license": "xxxx",
           "installerIcon": "icons/128x128.png",
@@ -195,7 +178,7 @@
     "systemTray":{
       "iconAsTemplate": true,
       "menuOnLeftClick": true,
-      "title": "wen tools",
+      "title": "wen_tools",
       "iconPath": "icons/icon.png"
     },
     "updater": {

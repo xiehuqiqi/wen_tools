@@ -1,11 +1,11 @@
 [package]
-name = "app"
+name = "wen_tools"
 version = "0.1.0"
-description = "A Tauri App"
+description = "suwenmao's wen_tools"
 authors = ["you"]
 license = ""
 repository = ""
-default-run = "app"
+default-run = "wen_tools"
 edition = "2021"
 rust-version = "1.60"
 
