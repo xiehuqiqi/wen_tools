@@ -3,7 +3,8 @@
   "build": {
     "beforeBuildCommand": "pnpm build",
     "beforeDevCommand": "pnpm dev",
-    "devPath": "http://localhost:5173",
+    "devPath": "http://localhost:5137",
+
     "distDir": "../dist"
   },
   "package": {
@@ -127,6 +128,15 @@
         "icons/icon.icns",
         "icons/icon.ico",
         "icons/icon.png",
+        "icons/Square30x30Logo.png",
+        "icons/Square44x44Logo.png",
+        "icons/Square71x71Logo.png",
+        "icons/Square89x89Logo.png",
+        "icons/Square107x107Logo.png",
+        "icons/Square142x142Logo.png",
+        "icons/Square150x150Logo.png",
+        "icons/Square284x284Logo.png",
+        "icons/Square310x310Logo.png",
         "icons/StoreLogo.png"
       ],
       "identifier": "wen.suwenmao.wentools",
@@ -134,15 +144,10 @@
       "windows": {
         "allowDowngrades": true,
         "nsis": {
-          "license": "xxxx",
-          "installerIcon": "icons/128x128.png",
+          "license": "wen/license.txt",
+          "installerIcon": "icons/icon.ico",
           "installMode": "both",
-          "languages": [
-            "zh-CN",
-            "zh-TW",
-            "en-US",
-            "ja-JP"
-          ],
+          "languages": ["English", "TradChinese", "SimpChinese", "Japanese"],
           "displayLanguageSelector": false
         },
         "timestampUrl": null,
@@ -153,31 +158,25 @@
           "type": "offlineInstaller"
         },
         "wix": {
-          "language": [
-            "zh-CN",
-            "zh-TW",
-            "en-US",
-            "ja-JP"
-          ]
+          "language": ["zh-CN", "zh-TW", "en-US", "ja-JP"]
         }
       }
     },
-    "cli":null,
+    "cli": null,
     "macOSPrivateApi": false,
     "pattern": {
-      "use":"brownfield"
+      "use": "brownfield"
     },
     "security": {
       "dangerousDisableAssetCspModification": false,
       "dangerousRemoteDomainIpcAccess": [],
       "dangerousUseHttpScheme": false,
-      "devCsp":null,
+      "devCsp": null,
       "csp": null,
       "freezePrototype": false
     },
-    "systemTray":{
-      "iconAsTemplate": true,
-      "menuOnLeftClick": true,
+    "systemTray": {
+      "iconAsTemplate": false,
       "title": "wen_tools",
       "iconPath": "icons/icon.png"
     },
@@ -194,7 +193,7 @@
     "windows": [
       {
         "label": "main",
-        "url": "/",
+        "url": "/index.html",
         "fileDropEnabled": true,
         "center": true,
         "x": 0,
@@ -206,7 +205,7 @@
         "maxWidth": 1920,
         "maxHeight": 1366,
         "resizable": true,
-        "title": "lcone",
+        "title": "wen_tools",
         "fullscreen": false,
         "focus": true,
         "transparent": false,

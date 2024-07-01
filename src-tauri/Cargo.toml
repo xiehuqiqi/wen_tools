@@ -1,10 +1,10 @@
 [package]
 name = "wen_tools"
-version = "0.1.0"
-description = "suwenmao's wen_tools"
-authors = ["you"]
-license = ""
-repository = ""
+version = "1.0.0"
+description = "一个简单的工具箱 & 强大并且实用 || A simple toolbox & Powerful and practical"
+authors = ["Su wenmao[xiehuqiqi(github)]"]
+license = "suwen_Universal_distribution_protocol"
+repository = "https://github.com/xiehuqiqi/wen_tools"
 default-run = "wen_tools"
 edition = "2021"
 rust-version = "1.60"
@@ -17,7 +17,7 @@ tauri-build = { version = "1.5.2", features = [] }
 [dependencies]
 serde_json = "1.0"
 serde = { version = "1.0", features = ["derive"] }
-tauri = { version = "1.6.5", features = [ "system-tray", "api-all"] }
+tauri = { version = "1.6.5", features = ["api-all", "system-tray"] }
 
 [features]
 # this feature is used for production builds or when `devPath` points to the filesystem and the built-in dev server is disabled.
