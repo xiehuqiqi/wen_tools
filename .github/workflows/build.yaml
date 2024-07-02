@@ -41,10 +41,10 @@ jobs:
 
       # 使用 pnpm 作为包管理器
       - name: Install pnpm
-        uses: pnpm/action-setup@v2
+        uses: pnpm/action-setup@v3
         id: pnpm-install
         with:
-          version: 7
+          version: 9
           run_install: false
 
       - name: Get pnpm store directory
