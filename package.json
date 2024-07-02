@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "vite",
-    "build": "rsw build && tsc && vite build",
+    "build": "vite build",
     "preview": "vite preview",
     "prettier": "prettier --write ./**/*.{html,vue,ts,js,json,md}",
     "type-check": "vue-tsc --noEmit",
