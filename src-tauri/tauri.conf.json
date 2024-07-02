@@ -174,12 +174,10 @@
           "languages": ["English", "TradChinese", "SimpChinese", "Japanese"],
           "displayLanguageSelector": true
         },
-        "tsp": false,
         "wix": {
           "language": ["zh-Cn", "zh-TW", "en-US", "ja-JP"],
           "license": "wen/license.txt"
-        },
-        "timestampUrl": ""
+        }
       }
     },
     "cli": {
