@@ -1,32 +1,32 @@
-import { createApp } from "vue";
-import { setupRouter } from "@/router";
+import { createApp } from 'vue'
+import { setupRouter } from '@/router'
 import {
   setupCustomComponents,
   setupGlobalMethods,
   setupDirectives,
-  setupAssets,
-} from "@/plugins";
-import App from "./App.vue";
+  setupAssets
+} from '@/plugins'
+import App from './App.vue'
 async function bootStrap() {
   // 设置样式加载
-  setupAssets();
+  setupAssets()
   // 创建vue
-  const app = createApp(App);
+  const app = createApp(App)
   // 全局加载
   // 注册全局常用的 组件
-  setupCustomComponents(app);
+  setupCustomComponents(app)
 
   // 注册全局方法
-  setupGlobalMethods(app);
+  setupGlobalMethods(app)
 
   // 注册全局自定义指令
-  setupDirectives(app);
+  setupDirectives(app)
 
   // 挂载状态管理
 
   // 挂载路由
-  await setupRouter(app);
+  await setupRouter(app)
 
-  app.mount("#app");
+  app.mount('#app')
 }
-bootStrap();
+bootStrap()
