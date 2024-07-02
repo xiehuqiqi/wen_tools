@@ -6,7 +6,6 @@ import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Icons from 'unplugin-icons/vite'
 import IconsResolver from 'unplugin-icons/resolver'
-import Unocss from 'unocss/vite'
 import { VitePWA } from 'vite-plugin-pwa'
 import Inspect from 'vite-plugin-inspect'
 import { visualizer } from 'rollup-plugin-visualizer'
@@ -112,12 +111,11 @@ export function createVitePlugins(viteEnv, isDev: boolean) {
       defaultClass: 'inline-block',
       autoInstall: true
     }),
-    Unocss(),
     visualizer({
       gzipSize: true,
       brotliSize: true,
       emitFile: false,
-      filename: 'test.html', //分析图生成的文件名
+      filename: '/dist/test.html', //分析图生成的文件名
       open: true //如果存在本地服务端口，将在打包后自动展示
     })
   ]
