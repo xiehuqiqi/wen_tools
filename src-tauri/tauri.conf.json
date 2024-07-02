@@ -1,0 +1,248 @@
+{
+  "$schema": "../node_modules/@tauri-apps/cli/schema.json",
+  "build": {
+    "beforeBuildCommand": "pnpm build",
+    "beforeDevCommand": "pnpm dev",
+    "devPath": "http://localhost:4096",
+    "distDir": "../dist"
+  },
+  "package": {
+    "productName": "wen_tools",
+    "version": "../package.json"
+  },
+  "tauri": {
+    "allowlist": {
+      "all": true,
+      "app": {
+        "all": true,
+        "hide": true,
+        "show": true
+      },
+      "clipboard": {
+        "all": true,
+        "readText": true,
+        "writeText": true
+      },
+      "dialog": {
+        "all": true,
+        "ask": true,
+        "confirm": true,
+        "message": true,
+        "open": true,
+        "save": true
+      },
+      "fs": {
+        "all": true,
+        "copyFile": true,
+        "createDir": true,
+        "exists": true,
+        "readDir": true,
+        "readFile": true,
+        "removeDir": true,
+        "removeFile": true,
+        "renameFile": true,
+        "scope": [],
+        "writeFile": true
+      },
+      "globalShortcut": {
+        "all": true
+      },
+      "http": {
+        "all": true,
+        "request": true,
+        "scope": []
+      },
+      "notification": {
+        "all": true
+      },
+      "os": {
+        "all": true
+      },
+      "path": {
+        "all": true
+      },
+      "process": {
+        "all": true,
+        "exit": true,
+        "relaunch": true,
+        "relaunchDangerousAllowSymlinkMacos": true
+      },
+      "protocol": {
+        "all": true,
+        "asset": true,
+        "assetScope": []
+      },
+      "shell": {
+        "all": true,
+        "execute": true,
+        "open": true,
+        "scope": [],
+        "sidecar": true
+      },
+      "window": {
+        "all": true,
+        "center": true,
+        "close": true,
+        "create": true,
+        "hide": true,
+        "maximize": true,
+        "minimize": true,
+        "print": true,
+        "requestUserAttention": true,
+        "setAlwaysOnTop": true,
+        "setClosable": true,
+        "setContentProtected": true,
+        "setCursorGrab": true,
+        "setCursorIcon": true,
+        "setCursorPosition": true,
+        "setCursorVisible": true,
+        "setDecorations": true,
+        "setFocus": true,
+        "setFullscreen": true,
+        "setIcon": true,
+        "setIgnoreCursorEvents": true,
+        "setMaxSize": true,
+        "setMaximizable": true,
+        "setMinSize": true,
+        "setMinimizable": true,
+        "setPosition": true,
+        "setResizable": true,
+        "setSize": true,
+        "setSkipTaskbar": true,
+        "setTitle": true,
+        "show": true,
+        "startDragging": true,
+        "unmaximize": true,
+        "unminimize": true
+      }
+    },
+    "bundle": {
+      "active": true,
+      "appimage": {
+        "bundleMediaFramework": false
+      },
+      "category": "DeveloperTool",
+      "copyright": "",
+      "deb": {
+        "depends": []
+      },
+      "externalBin": [],
+      "icon": [
+        "icons/32x32.png",
+        "icons/128x128.png",
+        "icons/128x128@2x.png",
+        "icons/icon.icns",
+        "icons/icon.ico",
+        "icons/icon.png",
+        "icons/Square30x30Logo.png",
+        "icons/Square44x44Logo.png",
+        "icons/Square71x71Logo.png",
+        "icons/Square89x89Logo.png",
+        "icons/Square107x107Logo.png",
+        "icons/Square142x142Logo.png",
+        "icons/Square150x150Logo.png",
+        "icons/Square284x284Logo.png",
+        "icons/Square310x310Logo.png",
+        "icons/StoreLogo.png"
+      ],
+      "identifier": "wen.suwenmao.wentools",
+      "longDescription": "",
+      "macOS": {
+        "entitlements": null,
+        "exceptionDomain": "",
+        "frameworks": [],
+        "providerShortName": null,
+        "signingIdentity": null
+      },
+      "publisher": "",
+      "resources": [],
+      "shortDescription": "",
+      "targets": "all",
+      "windows": {
+        "allowDowngrades": true,
+        "certificateThumbprint": null,
+        "digestAlgorithm": "sha256",
+        "webviewFixedRuntimePath": null,
+        "webviewInstallMode": {
+          "silent": true,
+          "type": "offlineInstaller"
+        },
+        "nsis": {
+          "license": "wen/license.txt",
+          "installerIcon": "icons/icon.ico",
+          "installMode": "both",
+          "languages": ["English", "TradChinese", "SimpChinese", "Japanese"],
+          "displayLanguageSelector": true
+        },
+        "tsp": false,
+        "wix": {
+          "language": ["zh-Cn", "zh-TW", "en-US", "ja-JP"],
+          "license": "wen/license.txt"
+        },
+        "timestampUrl": ""
+      }
+    },
+    "cli": {
+      "afterHelp": "",
+      "args": [],
+      "beforeHelp": "",
+      "description": "",
+      "longDescription": "",
+      "subcommands": {}
+    },
+    "macOSPrivateApi": false,
+    "pattern": {
+      "use": "brownfield"
+    },
+    "security": {
+      "csp": null
+    },
+    "systemTray": {
+      "iconAsTemplate": false,
+      "iconPath": "icons/icon.png",
+      "title": "wen_tools",
+      "menuOnLeftClick": true
+    },
+    "updater": {
+      "active": false,
+      "dialog": true,
+      "endpoints": [],
+      "pubkey": "",
+      "windows": {
+        "installMode": "quiet",
+        "installerArgs": []
+      }
+    },
+    "windows": [
+      {
+        "label": "main",
+        "url": "/index.html",
+        "fileDropEnabled": true,
+        "center": true,
+        "x": 0,
+        "y": 0,
+        "width": 1080,
+        "height": 640,
+        "minWidth": 640,
+        "minHeight": 400,
+        "maxWidth": 1920,
+        "maxHeight": 1366,
+        "resizable": true,
+        "title": "wen_tools",
+        "fullscreen": false,
+        "focus": true,
+        "transparent": false,
+        "maximizable": true,
+        "visible": true,
+        "decorations": false,
+        "alwaysOnTop": false,
+        "contentProtected": false,
+        "skipTaskbar": false,
+        "theme": "Light",
+        "titleBarStyle": "Visible",
+        "hiddenTitle": false,
+        "acceptFirstMouse": false
+      }
+    ]
+  }
+}
