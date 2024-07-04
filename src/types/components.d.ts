@@ -21,6 +21,8 @@ declare module 'vue' {
     IconSupport: typeof import('./../components/icons/IconSupport.vue')['default']
     IconTooling: typeof import('./../components/icons/IconTooling.vue')['default']
     LogosBitriseIcon: typeof import('./../components/icon/LogosBitriseIcon.vue')['default']
+    NConfigProvider: (typeof import('naive-ui'))['NConfigProvider']
+    NLayoutHeader: typeof import('naive-ui')['NLayoutHeader']
     Pwa: typeof import('./../components/Pwa.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']

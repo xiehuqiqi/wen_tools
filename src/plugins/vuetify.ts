@@ -1,3 +1,13 @@
+/*
+ * @Author: suwenmao shenming26@outlook.com
+ * @Date: 2024-07-02 09:48:06
+ * @LastEditors: suwenmao shenming26@outlook.com
+ * @LastEditTime: 2024-07-04 14:03:32
+ * @FilePath: \wen_tools\src\plugins\vuetify.ts
+ * @Description:
+ *
+ * Copyright (c) 2024 by ${git_name_email}, All Rights Reserved.
+ */
 import 'vuetify/styles'
 import type { FunctionalComponent } from 'vue'
 import { createVuetify, type IconSet, type IconProps } from 'vuetify'
