@@ -12,14 +12,36 @@
 
 <script setup lang="ts"></script>
 
+<script lang="ts">
+import type { GlobalTheme } from 'naive-ui'
+import { defineComponent, ref } from 'vue'
+import { darkTheme } from 'naive-ui'
+
+export default defineComponent({
+  setup() {
+    return {
+      darkTheme,
+      theme: ref<GlobalTheme | null>(null)
+    }
+  }
+})
+</script>
+
 <template>
-  <wen-main></wen-main>
+  <n-config-provider :theme="theme">
+    <wen-main></wen-main>
+    <n-card class="xxxx">
+      <n-space>
+        <n-button @click="theme = darkTheme"> 深色 </n-button>
+        <n-button @click="theme = null"> 浅色 </n-button>
+      </n-space>
+    </n-card>
+  </n-config-provider>
 </template>
 
 <style>
-/* #app{
-  border-radius: 100px;
-  background-color: #4d4d4d;
-} */
-
+.xxxx {
+  position: fixed;
+  bottom: 0px;
+}
 </style>

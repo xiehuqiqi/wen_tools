@@ -21,8 +21,15 @@ declare module 'vue' {
     IconSupport: typeof import('./../components/icons/IconSupport.vue')['default']
     IconTooling: typeof import('./../components/icons/IconTooling.vue')['default']
     LogosBitriseIcon: typeof import('./../components/icon/LogosBitriseIcon.vue')['default']
-    NConfigProvider: (typeof import('naive-ui'))['NConfigProvider']
+    NButton: typeof import('naive-ui')['NButton']
+    NCard: typeof import('naive-ui')['NCard']
+    NConfigProvider: typeof import('naive-ui')['NConfigProvider']
+    NH2: typeof import('naive-ui')['NH2']
+    NIcon: typeof import('naive-ui')['NIcon']
+    NLayout: typeof import('naive-ui')['NLayout']
     NLayoutHeader: typeof import('naive-ui')['NLayoutHeader']
+    NLayoutSider: typeof import('naive-ui')['NLayoutSider']
+    NSpace: typeof import('naive-ui')['NSpace']
     Pwa: typeof import('./../components/Pwa.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
@@ -31,5 +38,6 @@ declare module 'vue' {
     Welcome: typeof import('./../components/Welcome.vue')['default']
     WelcomeItem: typeof import('./../components/WelcomeItem.vue')['default']
     WenMain: typeof import('./../components/WenMain.vue')['default']
+    WenTitlebar: typeof import('./../components/titlebar/WenTitlebar.vue')['default']
   }
 }
