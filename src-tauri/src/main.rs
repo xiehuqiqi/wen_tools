@@ -11,8 +11,8 @@ fn main() {
   let context = tauri::generate_context!();
 
   tauri::Builder::default()
-    .setup(|app| {
-      set_window_shadow(app);
+    .setup(|wen_tools| {
+      set_window_shadow(wen_tools);
       Ok(())
     })
     .run(context)

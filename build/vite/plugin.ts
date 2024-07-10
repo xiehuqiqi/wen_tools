@@ -1,7 +1,16 @@
+/*
+ * @Author: suwenmao shenming26@outlook.com
+ * @Date: 2024-07-03 15:06:40
+ * @LastEditors: suwenmao shenming26@outlook.com
+ * @LastEditTime: 2024-07-09 13:00:37
+ * @FilePath: \wen_tools\build\vite\plugin.ts
+ * @Description:
+ *
+ * Copyright (c) 2024 by ${git_name_email}, All Rights Reserved.
+ */
 import type { Plugin } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import VueJsx from '@vitejs/plugin-vue-jsx'
-import legacy from '@vitejs/plugin-legacy'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Icons from 'unplugin-icons/vite'
@@ -9,8 +18,10 @@ import IconsResolver from 'unplugin-icons/resolver'
 import { VitePWA } from 'vite-plugin-pwa'
 import Inspect from 'vite-plugin-inspect'
 import { visualizer } from 'rollup-plugin-visualizer'
+import { vitePluginForArco } from '@arco-plugins/vite-vue'
 
 import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
+import { ArcoResolver } from 'unplugin-vue-components/resolvers'
 export function createVitePlugins(viteEnv, isDev: boolean) {
   const vitePlugins: Plugin | Plugin[] = [
     vue({
@@ -56,30 +67,10 @@ export function createVitePlugins(viteEnv, isDev: boolean) {
       }
     }),
     VueJsx(),
-    legacy({
-      targets: ['defaults', 'ie >= 11', 'chrome 52'], //需要兼容的目标列表，可以设置多个
-      additionalLegacyPolyfills: ['regenerator-runtime/runtime'],
-      renderLegacyChunks: true,
-      polyfills: [
-        'es.symbol',
-        'es.array.filter',
-        'es.promise',
-        'es.promise.finally',
-        'es/map',
-        'es/set',
-        'es.array.for-each',
-        'es.object.define-properties',
-        'es.object.define-property',
-        'es.object.get-own-property-descriptor',
-        'es.object.get-own-property-descriptors',
-        'es.object.keys',
-        'es.object.to-string',
-        'web.dom-collections.for-each',
-        'esnext.global-this',
-        'esnext.string.match-all'
-      ]
-    }),
     Inspect(),
+    vitePluginForArco({
+      theme: '@arco-themes/vue-gi-demo'
+    }),
     Components({
       // allow auto load markdown components under `./src/components/`
       extensions: ['vue', 'md'],
@@ -91,7 +82,10 @@ export function createVitePlugins(viteEnv, isDev: boolean) {
         IconsResolver({
           prefix: 'Icon'
         }),
-        NaiveUiResolver()
+        NaiveUiResolver(),
+        ArcoResolver({
+          sideEffect: true
+        })
       ],
       dts: 'src/types/components.d.ts'
     }),
@@ -118,7 +112,8 @@ export function createVitePlugins(viteEnv, isDev: boolean) {
       // Auto import functions from UILibrary, e.g. Message, Spin, Loading, MessageBox... (with style)
       resolvers: [
         // Auto import icon components
-        NaiveUiResolver()
+        NaiveUiResolver(),
+        ArcoResolver()
       ]
     }),
     Icons({

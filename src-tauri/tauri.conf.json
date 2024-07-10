@@ -66,12 +66,14 @@
       }
     },
     "cli": {
-      "afterHelp": "",
+      "description": "wen_tools Help guide",
+      "longDescription": "A little help guide",
+      "beforeHelp": "wen_tools app",
+      "afterHelp": "A simple application",
       "args": [],
-      "beforeHelp": "",
-      "description": "",
-      "longDescription": "",
-      "subcommands": {}
+      "subcommands": {
+        "subcommand-name": {}
+      }
     },
     "macOSPrivateApi": false,
     "pattern": {
