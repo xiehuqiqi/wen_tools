@@ -1,6 +1,6 @@
 [package]
 name = "wen_tools"
-version = "0.0.3"
+version = "0.0.4"
 description = "一个简单的工具箱 & 强大并且实用 || A simple toolbox & Powerful and practical"
 authors = ["Su wenmao[xiehuqiqi(github)]"]
 license = "suwen_Universal_distribution_protocol"

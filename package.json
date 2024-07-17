@@ -1,12 +1,12 @@
 {
   "name": "wen_tools",
   "private": true,
-  "version": "0.0.3",
+  "version": "0.0.4",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "prettier": "prettier --write ./**/*.{html,vue,ts,js,json,md}",
+    "pr": "prettier --write ./**/*.{html,vue,ts,js,json,md}",
     "type-check": "vue-tsc --noEmit",
     "tauri": "tauri",
     "devp": "prettier --write ./**/*.{html,vue,ts,js,json,md} && tauri dev",

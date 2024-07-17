@@ -12,7 +12,8 @@ import '@/styles/base.css'
 
 import '@/assets/font_icon/iconfont'
 
-import '@arco-themes/vue-gi-demo/css/arco.css'
+import '@arco-themes/vue-gi-demo/theme.css'
+import '@arco-themes/vue-gi-demo/theme.less'
 
 // 通用字体
 import 'vfonts/Lato.css'
