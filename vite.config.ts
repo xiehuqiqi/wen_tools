@@ -3,11 +3,17 @@ import { loadEnv } from 'vite'
 import { createVitePlugins } from './build/vite/plugin'
 import { wrapperEnv } from './build/utils'
 import { resolve } from 'path'
+import { internalIpV4 } from "internal-ip";
+
 // https://vitejs.dev/config/
 function pathResolve(dir: string) {
   return resolve(process.cwd(), '.', dir)
 }
-export default ({ command, mode }: ConfigEnv): UserConfig => {
+
+// @ts-expect-error process is a nodejs global
+const mobile = !!/android|ios/.exec(process.env.TAURI_ENV_PLATFORM);
+
+export default async ({ command, mode }: ConfigEnv): UserConfig => {
   const root = process.cwd()
   const isBuild = command === 'build'
   const env = loadEnv(mode, root)
@@ -38,24 +44,49 @@ export default ({ command, mode }: ConfigEnv): UserConfig => {
     },
     plugins: createVitePlugins(viteEnv, isBuild),
 
+    // Vite options tailored for Tauri development and only applied in `tauri dev` or `tauri build`
+    //
+    // 1. prevent vite from obscuring rust errors
     clearScreen: false,
 
+    // 2. tauri expects a fixed port, fail if that port is not available
     server: {
-      host: '0.0.0.0',
       port: 4096,
-      strictPort: true
+      strictPort: true,
+      host: mobile ? '0.0.0.0' : false,
+      hmr: mobile
+        ? {
+          protocol: "ws",
+          host: internalIpV4(),
+          port: 1421,
+        }
+        : undefined,
+      watch: {
+        // 3. tell vite to ignore watching `src-tauri`
+        ignored: ["**/src-tauri/**"],
+      },
     },
 
     base: './',
 
     envPrefix: [
       'VITE_',
-      'TAURI_PLATFORM',
-      'TAURI_ARCH',
-      'TAURI_FAMILY',
-      'TAURI_PLATFORM_VERSION',
-      'TAURI_PLATFORM_TYPE',
-      'TAURI_DEBUG'
+      'TAURI_ENV_PLATFORM',
+      'TAURI_ENV_ARCH',
+      'TAURI_ENV_FAMILY',
+      'TAURI_ENV_PLATFORM_VERSION',
+      'TAURI_ENV_PLATFORM_TYPE',
+      'TAURI_ENV_DEBUG',
+      'TAURI_SIGNING_PRIVATE_KEY',
+      'TAURI_SIGNING_PRIVATE_KEY_PASSWORD',
+      'TAURI_CLI_NO_DEV_SERVER_WAIT',
+      'TAURI_CLI_PORT',
+      'TAURI_CLI_CONFIG_DEPTH',
+      'TAURI_BUNDLER_WIX_FIPS_COMPLIANT',
+      'TAURI_CLI_WATCHER_IGNORE_FILENAME',
+      'TAURI_LINUX_AYATANA_APPINDICATOR',
+      'APPLE_DEVELOPMENT_TEAM'
+
     ],
     build: {
       // Tauri uses Chromium on Windows and WebKit on macOS and Linux

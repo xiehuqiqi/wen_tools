@@ -1,27 +1,43 @@
 [package]
 name = "wen_tools"
-version = "0.0.4"
+version = "0.0.5"
 description = "一个简单的工具箱 & 强大并且实用 || A simple toolbox & Powerful and practical"
 authors = ["Su wenmao[xiehuqiqi(github)]"]
 license = "suwen_Universal_distribution_protocol"
 repository = "https://github.com/xiehuqiqi/wen_tools"
 default-run = "wen_tools"
 edition = "2021"
-rust-version = "1.60"
+rust-version = "1.70"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
+[lib]
+name = "wen_tools_lib"
+crate-type = ["lib", "cdylib", "staticlib"]
+
 [build-dependencies]
-tauri-build = { version = "1.5.2", features = [] }
+tauri-build = { version = "2.0.0-beta.18", features = [] }
 
 [dependencies]
 serde_json = "1.0"
 serde = { version = "1.0", features = ["derive"] }
-tauri = { version = "1.6.5", features = ["api-all", "cli", "system-tray"] }
-window-shadows = "0.2.1"
+tauri = { version = "2.0.0-beta.24", features = ["tray-icon"] }
+tauri-plugin-shell = "2.0.0-beta"
+tauri-plugin-clipboard-manager = "2.0.0-beta.0"
+tauri-plugin-fs = "2.0.0-beta.0"
+tauri-plugin-dialog = "2.0.0-beta.0"
+tauri-plugin-os = "2.0.0-beta.0"
 
 [features]
 # this feature is used for production builds or when `devPath` points to the filesystem and the built-in dev server is disabled.
 # If you use cargo directly instead of tauri's cli you can use this feature flag to switch between tauri's `dev` and `build` modes.
 # DO NOT REMOVE!!
 custom-protocol = [ "tauri/custom-protocol" ]
+
+[target."cfg(not(any(target_os = \"android\", target_os = \"ios\")))".dependencies]
+tauri-plugin-autostart = "2.0.0-beta.0"
+tauri-plugin-cli = "2.0.0-beta.0"
+tauri-plugin-global-shortcut = "2.0.0-beta.0"
+tauri-plugin-updater = "2.0.0-beta.0"
+tauri-plugin-window-state = "2.0.0-beta"
+

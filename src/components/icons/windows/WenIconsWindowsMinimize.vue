@@ -13,8 +13,10 @@
 </template>
 
 <script setup>
-import { appWindow } from '@tauri-apps/api/window'
-import '@/assets//font_icon/iconfont'
+import { getCurrentWindow } from '@tauri-apps/api/window';
+import '@/assets/font_icon/iconfont'
+
+const appWindow = getCurrentWindow();
 
 async function titlebar_minimize() {
   console.log('窗口最小化')

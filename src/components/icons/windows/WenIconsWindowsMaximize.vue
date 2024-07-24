@@ -12,21 +12,24 @@
   </a-button>
 </template>
 <script setup>
-import { appWindow } from '@tauri-apps/api/window'
+import { getCurrentWindow } from '@tauri-apps/api/window'
 import '@/assets//font_icon/iconfont'
 
-var titlebar_maximize_true = 0
+const appWindow = getCurrentWindow();
+// var titlebar_maximize_true = 0
 async function titlebar_maximize() {
   console.log('窗口最大化')
 
-  if (titlebar_maximize_true == 0) {
-    console.log(titlebar_maximize_true)
-    await appWindow.maximize()
-    titlebar_maximize_true = 1
-  } else {
-    await appWindow.unmaximize()
-    console.log(titlebar_maximize_true)
-    titlebar_maximize_true = 0
-  }
+  await appWindow.toggleMaximize();
+
+  // if (titlebar_maximize_true == 0) {
+  //   console.log(titlebar_maximize_true)
+  //   await appWindow.maximize()
+  //   titlebar_maximize_true = 1
+  // } else {
+  //   await appWindow.unmaximize()
+  //   console.log(titlebar_maximize_true)
+  //   titlebar_maximize_true = 0
+  // }
 }
 </script>

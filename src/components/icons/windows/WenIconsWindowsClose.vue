@@ -11,8 +11,10 @@
 </template>
 
 <script setup>
-import { appWindow } from '@tauri-apps/api/window'
-import '@/assets//font_icon/iconfont'
+import { getCurrentWindow } from '@tauri-apps/api/window'
+import '@/assets/font_icon/iconfont'
+
+const appWindow = getCurrentWindow();
 
 var titlebar_close_zhi = 0
 async function titlebar_close() {

@@ -1,0 +1,140 @@
+{
+  "$schema": "../node_modules/@tauri-apps/cli/schema.json",
+  "build": {
+    "beforeBuildCommand": "pnpm build",
+    "beforeDevCommand": "pnpm dev",
+    "frontendDist": "../dist",
+    "devUrl": "http://localhost:4096"
+  },
+  "bundle": {
+    "active": true,
+    "category": "DeveloperTool",
+    "copyright": "",
+    "icon": [
+      "icons/32x32.png",
+      "icons/128x128.png",
+      "icons/128x128@2x.png",
+      "icons/icon.icns",
+      "icons/icon.ico",
+      "icons/icon.png",
+      "icons/Square30x30Logo.png",
+      "icons/Square44x44Logo.png",
+      "icons/Square71x71Logo.png",
+      "icons/Square89x89Logo.png",
+      "icons/Square107x107Logo.png",
+      "icons/Square142x142Logo.png",
+      "icons/Square150x150Logo.png",
+      "icons/Square284x284Logo.png",
+      "icons/Square310x310Logo.png",
+      "icons/StoreLogo.png"
+    ],
+    "windows": {
+      "allowDowngrades": true,
+      "webviewFixedRuntimePath": null,
+      "webviewInstallMode": {
+        "silent": true,
+        "type": "offlineInstaller"
+      },
+      "nsis": {
+        "displayLanguageSelector": true,
+        "installerIcon": "icons/icon.ico",
+        "installMode": "both",
+        "languages": [
+          "English",
+          "TradChinese",
+          "SimpChinese",
+          "Japanese"
+        ]
+      },
+      "wix": {
+        "language": [
+          "zh-CN",
+          "zh-TW",
+          "en-US",
+          "ja-JP"
+        ]
+      }
+    },
+    "longDescription": "",
+    "macOS": {
+      "entitlements": null,
+      "exceptionDomain": "",
+      "frameworks": [],
+      "providerShortName": null,
+      "signingIdentity": null
+    },
+    "targets": "all",
+    "licenseFile": "wen/license.txt",
+    "createUpdaterArtifacts": "v1Compatible"
+  },
+  "productName": "wen_tools",
+  "version": "../package.json",
+  "identifier": "wen.suwenmao.wentools",
+  "plugins": {
+    "cli": {
+      "description": "wen_tools Help guide",
+      "longDescription": "A little help guide",
+      "beforeHelp": "wen_tools app",
+      "afterHelp": "A simple application",
+      "args": [],
+      "subcommands": {
+        "subcommand-name": {}
+      }
+    },
+    "updater": {
+      "pubkey": "",
+      "windows": {
+        "installMode": "quiet",
+        "installerArgs": []
+      },
+      "endpoints": []
+    }
+  },
+  "app": {
+    "withGlobalTauri": true,
+    "security": {
+      "csp": null,
+      "pattern": {
+        "use": "brownfield"
+      }
+    },
+    "trayIcon": {
+      "iconAsTemplate": false,
+      "iconPath": "icons/icon.png",
+      "title": "wen_tools",
+      "menuOnLeftClick": true
+    },
+    "macOSPrivateApi": false,
+    "windows": [
+      {
+        "label": "main",
+        "url": "/index.html",
+        "fileDropEnabled": true,
+        "center": true,
+        "x": 0,
+        "y": 0,
+        "width": 1080,
+        "height": 640,
+        "minWidth": 640,
+        "minHeight": 400,
+        "maxWidth": 1920,
+        "maxHeight": 1366,
+        "resizable": true,
+        "title": "wen_tools",
+        "fullscreen": false,
+        "focus": true,
+        "transparent": false,
+        "maximizable": true,
+        "visible": true,
+        "decorations": false,
+        "alwaysOnTop": false,
+        "contentProtected": false,
+        "skipTaskbar": false,
+        "theme": "Light",
+        "titleBarStyle": "Visible",
+        "hiddenTitle": false,
+        "acceptFirstMouse": false
+      }
+    ]
+  }
+}
