@@ -2,7 +2,7 @@
  * @Author: suwenmao shenming26@outlook.com
  * @Date: 2024-07-12 14:21:08
  * @LastEditors: suwenmao shenming26@outlook.com
- * @LastEditTime: 2024-07-17 13:46:11
+ * @LastEditTime: 2024-07-23 15:27:07
  * @FilePath: \wen_tools\src\layout\WenLayoutMain.vue
  * @Description: 
  * 
@@ -16,137 +16,68 @@
     hide-trigger
     :collapsed="collapsed"
   >
+    <wen-layout-sider />
   </a-layout-sider>
   <a-layout class="wen-layout-main">
-    <a-layout-header data-tauri-drag-region class="wen-layout-main-header">
+    <a-layout-header class="wen-layout-main-header">
       <a-row class="wen-layout-titlebar-grid">
-        <a-col flex="120px">
+        <a-col flex="96px" data-tauri-drag-region>
           <a-row class="wen-layout-titlebar-grid-1">
-            <a-col :span="8">
+            <a-col :span="12" data-tauri-drag-region>
               <a-button
                 type="text"
-                style="height: 30px; width: 30px"
+                style="height: 48px; width: 48px"
                 shape="round"
                 @click="onCollapse"
               >
                 <template #icon v-if="collapsed">
-                  <svg aria-hidden="true" style="height: 25px; width: 25px">
-                    <use xlink:href="#icon-xiangzuo"></use>
-                  </svg>
+                  <wen-icons-sider-button-if />
                 </template>
                 <template #icon v-else>
-                  <svg aria-hidden="true" style="height: 25px; width: 25px">
-                    <use xlink:href="#icon-xiangyou"></use>
-                  </svg>
+                  <wen-icons-sider-button-else />
                 </template>
               </a-button>
             </a-col>
-            <a-col :span="8">
-              <a-button type="text" style="height: 30px; width: 30px">
+            <a-col :span="12" data-tauri-drag-region>
+              <a-button
+                type="text"
+                style="height: 48px; width: 48px"
+                @click="wen_theme"
+              >
                 <template #icon>
-                  <svg aria-hidden="true" style="height: 25px; width: 25px">
-                    <use xlink:href="#icon-shijian"></use>
-                  </svg>
+                  <wen-icons-theme />
                 </template>
-              </a-button>
-            </a-col>
-            <a-col :span="8">
-              <a-button type="text" style="height: 30px; width: 30px"
-                ><template #icon>
-                  <svg aria-hidden="true" style="height: 30px; width: 30px">
-                    <use xlink:href="#icon-close1"></use></svg
-                ></template>
               </a-button>
             </a-col>
           </a-row>
         </a-col>
-        <a-col flex="auto">
+        <a-col flex="auto" data-tauri-drag-region>
           <div></div>
         </a-col>
-        <a-col flex="120px">
-          <a-row class="wen-layout-titlebar-grid-1">
-            <a-col :span="8">
-              <a-button
-                type="text"
-                style="height: 30px; width: 30px"
-                @click="titlebar_maximize"
-              >
-                <template #icon>
-                  <svg aria-hidden="true" style="height: 20px; width: 20px">
-                    <use xlink:href="#icon-zhifeiji1"></use>
-                  </svg>
-                </template>
-              </a-button>
+        <a-col flex="144px" data-tauri-drag-region>
+          <a-row class="wen-layout-titlebar-grid-1" data-tauri-drag-region>
+            <a-col :span="8" data-tauri-drag-region>
+              <wen-icons-windows-maximize />
             </a-col>
-            <a-col :span="8">
-              <a-button
-                type="text"
-                style="height: 30px; width: 30px"
-                @click="titlebar_minimize"
-              >
-                <template #icon>
-                  <svg aria-hidden="true" style="height: 25px; width: 25px">
-                    <use xlink:href="#icon-suoxiao"></use>
-                  </svg>
-                </template>
-              </a-button>
+            <a-col :span="8" data-tauri-drag-region>
+              <wen-icons-windows-minimize />
             </a-col>
-            <a-col :span="8">
-              <a-button
-                type="text"
-                style="height: 30px; width: 30px"
-                @click="titlebar_close"
-                ><template #icon>
-                  <svg aria-hidden="true" style="height: 25px; width: 25px">
-                    <use xlink:href="#icon-close1"></use></svg
-                ></template>
-              </a-button>
+            <a-col :span="8" data-tauri-drag-region>
+              <wen-icons-windows-close />
             </a-col>
           </a-row>
         </a-col>
       </a-row>
-      <a-button type="primary" @click="wen_theme">Primary</a-button>
     </a-layout-header>
-    <a-layout-content class="wen-layout-main-main"> </a-layout-content>
+    <a-layout-content class="wen-layout-main-main">
+      <div class="wen-layout-main-main-ye">
+        <router-view />
+      </div>
+    </a-layout-content>
   </a-layout>
 </template>
 
 <script setup lang="ts">
-import { appWindow } from '@tauri-apps/api/window'
-
-async function titlebar_minimize() {
-  console.log('窗口最小化')
-  await appWindow.minimize()
-}
-
-var titlebar_maximize_true = 0
-async function titlebar_maximize() {
-  console.log('窗口最大化')
-
-  if (titlebar_maximize_true == 0) {
-    console.log(titlebar_maximize_true)
-    await appWindow.maximize()
-    titlebar_maximize_true = 1
-  } else {
-    await appWindow.unmaximize()
-    console.log(titlebar_maximize_true)
-    titlebar_maximize_true = 0
-  }
-}
-
-var titlebar_close_zhi = 0
-async function titlebar_close() {
-  console.log('结束进程')
-  console.log(titlebar_close_zhi)
-  if (titlebar_close_zhi >= 4) {
-    await appWindow.close()
-  } else {
-    alert('即将关闭窗口')
-    console.log(titlebar_close_zhi)
-    titlebar_close_zhi = titlebar_close_zhi + 1
-  }
-}
-
 const collapsed = ref(true)
 function onCollapse() {
   collapsed.value = !collapsed.value
@@ -164,7 +95,20 @@ function wen_theme() {
 }
 </script>
 
-<style></style>
+<style>
+.wen-layout .wen-layout-main .wen-layout-main-main {
+  background-color: var(--color-bg-1);
+}
 
-function onClickMenuItem() { throw new Error('Function not implemented.'); }
-function onClickMenuItem() { throw new Error('Function not implemented.'); }
+.wen-layout .wen-layout-main .wen-layout-main-main .wen-layout-main-main-ye {
+  background-color: rgb(var(--arcoblue-2));
+  /* background-color: blue; */
+  height: calc(100% - 10px);
+  width: calc(100% - 10px);
+  margin: 4px;
+  border-radius: 5px;
+  border-color: rgb(var(--orange-5));
+  border-style: solid;
+  border-width: 1px;
+}
+</style>

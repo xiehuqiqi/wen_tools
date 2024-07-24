@@ -1,5 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import GaishuView from '@/views/GaishuView.vue'
 import { App } from 'vue'
 
 const router = createRouter({
@@ -7,16 +7,38 @@ const router = createRouter({
   routes: [
     {
       path: '/',
+      name: 'gaishu',
+      component: GaishuView
+    },
+    {
+      path: '/home',
       name: 'home',
-      component: HomeView
+      component: () => import('@/views/HomeView.vue')
+    },
+    {
+      path: '/settings',
+      name: 'settings',
+      component: () => import('@/views/SettingsView.vue')
     },
     {
       path: '/about',
       name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import('../views/AboutView.vue')
+      component: () => import('@/views/AboutView.vue')
+    },
+    {
+      path: '/cajianzhu',
+      name: 'cajianzhu',
+      component: () => import('@/views/CajianzhuView.vue')
+    },
+    {
+      path: '/filemanager',
+      name: 'filemanager',
+      component: () => import('@/views/FileManagerView.vue')
+    },
+    {
+      path: '/workplace',
+      name: 'workplace',
+      component: () => import('@/views/WorkplaceView.vue')
     }
   ]
 })

@@ -3,7 +3,7 @@
   components: { WenLayoutSider }, suwenmao shenming26@outlook.com
  * @Date: 2024-07-12 14:06:19
  * @LastEditors: suwenmao shenming26@outlook.com
- * @LastEditTime: 2024-07-17 12:51:29
+ * @LastEditTime: 2024-07-22 19:30:28
  * @FilePath: \wen_tools\src\layout\WenLayout.vue
  * 
  * Copyright (c) 2024 by ${git_name_email}, All Rights Reserved. 
@@ -14,9 +14,7 @@
   </a-layout>
 </template>
 
-<script setup lang="ts">
-import WenLayoutMain from './WenLayoutMain.vue'
-</script>
+<script setup lang="ts"></script>
 
 <style>
 .wen-layout {
@@ -37,16 +35,12 @@ import WenLayoutMain from './WenLayoutMain.vue'
 
 .wen-layout .wen-layout-main .wen-layout-main-header {
   background-color: var(--color-bg-1);
-  height: 30px;
-}
-
-.wen-layout .wen-layout-main .wen-layout-main-main {
-  background-color: var(--color-bg-1);
+  height: 48px;
 }
 
 .wen-layout-titlebar-grid .arco-col {
-  height: 30px;
-  line-height: 30px;
+  height: 48px;
+  line-height: 48px;
   color: var(--color-white);
   text-align: center;
 }

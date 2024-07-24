@@ -1,9 +1,8 @@
 <!--
- * @Author:
-  components: { WenMain }, suwenmao shenming26@outlook.com
+ * @Author: suwenmao shenming26@outlook.com
  * @Date: 2024-07-02 09:48:14
  * @LastEditors: suwenmao shenming26@outlook.com
- * @LastEditTime: 2024-07-11 10:51:41
+ * @LastEditTime: 2024-07-23 20:32:20
  * @FilePath: \wen_tools\src\App.vue
  * @Description: 
  * 
@@ -12,7 +11,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <wen-layout> </wen-layout>
+  <wen-layout></wen-layout>
 </template>
 
 <style></style>
