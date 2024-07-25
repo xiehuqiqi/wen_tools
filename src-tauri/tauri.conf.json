@@ -156,15 +156,33 @@
       "longDescription": "A little help guide",
       "beforeHelp": "wen_tools app",
       "afterHelp": "A simple application",
-      "args": [],
+      "args": [
+        {
+          "short": "v",
+          "name": "verbose",
+          "description": "Verbosity level"
+        }
+      ],
       "subcommands": {
-        "subcommand-name": {}
+        "run": {
+          "description": "Run the application",
+          "args": [
+            {
+              "name": "debug",
+              "description": "Run application in debug mode"
+            },
+            {
+              "name": "release",
+              "description": "Run application in release mode"
+            }
+          ]
+        }
       }
     },
     "updater": {
       "pubkey": "",
       "windows": {
-        "installMode": "quiet",
+        "installMode": "passive",
         "installerArgs": []
       },
       "endpoints": []

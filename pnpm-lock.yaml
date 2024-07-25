@@ -17,12 +17,18 @@ importers:
       '@tauri-apps/plugin-autostart':
         specifier: 2.0.0-beta.7
         version: 2.0.0-beta.7
+      '@tauri-apps/plugin-barcode-scanner':
+        specifier: 2.0.0-beta.7
+        version: 2.0.0-beta.7
       '@tauri-apps/plugin-cli':
         specifier: 2.0.0-beta.7
         version: 2.0.0-beta.7
       '@tauri-apps/plugin-clipboard-manager':
         specifier: 2.0.0-beta.2
         version: 2.0.0-beta.2
+      '@tauri-apps/plugin-deep-link':
+        specifier: 2.0.0-beta.9
+        version: 2.0.0-beta.9
       '@tauri-apps/plugin-dialog':
         specifier: 2.0.0-beta.7
         version: 2.0.0-beta.7
@@ -33,16 +39,22 @@ importers:
         specifier: 2.0.0-beta.7
         version: 2.0.0-beta.7
       '@tauri-apps/plugin-http':
-        specifier: '>=2.0.0-beta.7'
+        specifier: 2.0.0-beta.8
+        version: 2.0.0-beta.8
+      '@tauri-apps/plugin-log':
+        specifier: 2.0.0-beta.8
         version: 2.0.0-beta.8
       '@tauri-apps/plugin-notification':
-        specifier: '>=2.0.0-beta.7'
+        specifier: 2.0.0-beta.7
         version: 2.0.0-beta.7
       '@tauri-apps/plugin-os':
         specifier: 2.0.0-beta.7
         version: 2.0.0-beta.7
+      '@tauri-apps/plugin-positioner':
+        specifier: 2.0.0-beta.7
+        version: 2.0.0-beta.7
       '@tauri-apps/plugin-shell':
-        specifier: '>=2.0.0-beta.0'
+        specifier: 2.0.0-beta.8
         version: 2.0.0-beta.8
       '@tauri-apps/plugin-updater':
         specifier: 2.0.0-beta.7
@@ -1159,11 +1171,17 @@ packages:
   '@tauri-apps/plugin-autostart@2.0.0-beta.7':
     resolution: {integrity: sha512-/CRRMrJL3Pa2f5yi7MDUJXyyCS5SwRJ42Q+I6+O0d8ci76I6j1FLfCOft711uAaTIUzUs6UvDvmCLtBk33Gr1Q==}
 
+  '@tauri-apps/plugin-barcode-scanner@2.0.0-beta.7':
+    resolution: {integrity: sha512-rAnj/1M0jmUalenKdnxQBj/WAB8Cli5QFkWo5DzFDNhImKfkSe2Y8iKLFa5YsQw6rLTom8mJrxTQ6wGwM+SC1A==}
+
   '@tauri-apps/plugin-cli@2.0.0-beta.7':
     resolution: {integrity: sha512-AOKtMrPmBumfOLdD2jv3ct5Sbm4LQJ+iTY5v+cQN2siW4wGZXWSLHH6ZwhbEyEclIOepHvPlaRv91gS1PQE76g==}
 
   '@tauri-apps/plugin-clipboard-manager@2.0.0-beta.2':
     resolution: {integrity: sha512-yue7KTO9r9rlpgjcyRB9xcMyZKTrGOP2bWQnL/EoyVkECsr+8e8W8UMlvajXjv1hinFoiycXJe6GaSTPGO0Jlg==}
+
+  '@tauri-apps/plugin-deep-link@2.0.0-beta.9':
+    resolution: {integrity: sha512-phYfWEv3wOzswCUYumQCFiQDddUGeNVRpbtgF/658SCweFzgye09o/Qkq98XjjzE1qDswO9EofdUkrQ4QIG+Tw==}
 
   '@tauri-apps/plugin-dialog@2.0.0-beta.7':
     resolution: {integrity: sha512-myywwpsKbquDDzl5zaOmmLLv5O8EJ/GgHDAoVSPwO97R4iWzkDvj3HFF91tNh7i25Tu/bP6jYPAdZA1NCRxxtg==}
@@ -1177,11 +1195,17 @@ packages:
   '@tauri-apps/plugin-http@2.0.0-beta.8':
     resolution: {integrity: sha512-FhZP4WtS1o69Mn7z2RpNIdVS+2nPqmXyz6LhqweuP1FTjgTVraVxIfGLQCOMLpEUwo8zWY2uChllolV6WGYZ/A==}
 
+  '@tauri-apps/plugin-log@2.0.0-beta.8':
+    resolution: {integrity: sha512-l214keCBJqj8jNb5MkaS44oF+1xen5miaKxNH3SIGE4uyFIweDGmbwxqIxRhtb18gxy/mu/ykDmEuKc5+8uzfQ==}
+
   '@tauri-apps/plugin-notification@2.0.0-beta.7':
     resolution: {integrity: sha512-8uvbs0b2ByPw0VaBNolSvVEZKIOxarIBB2GZJERjhYcxJDpKcDzaTxPngPa5v98JrNSO62YdJBWXT5yABIpNMw==}
 
   '@tauri-apps/plugin-os@2.0.0-beta.7':
     resolution: {integrity: sha512-CHo09ecxUU0NFkAqctXeQzdaXw02EXulqcaZnbjrBfRJ2ulmGq7zaUCsHihfcqWcdnmNwmP9Wh/gyznMc1JF9Q==}
+
+  '@tauri-apps/plugin-positioner@2.0.0-beta.7':
+    resolution: {integrity: sha512-ibx+SI7zcQGJ/7jWHf91cRbReDXupxd8XM8nXzbqWNHpHzJXRMvkiX0qJmuTIEutBkI0z/N2WumamKAxuzgsMQ==}
 
   '@tauri-apps/plugin-shell@2.0.0-beta.8':
     resolution: {integrity: sha512-rFXI6MvsCdSGbuKbDu/NaOePREb9YTVTdeugHdvvljnKWW3dvmThBb2h/8Hxj+Z7Cd8MUoRxPeJWUZbPbJ2Imw==}
@@ -4289,6 +4313,10 @@ snapshots:
     dependencies:
       '@tauri-apps/api': 2.0.0-beta.15
 
+  '@tauri-apps/plugin-barcode-scanner@2.0.0-beta.7':
+    dependencies:
+      '@tauri-apps/api': 2.0.0-beta.15
+
   '@tauri-apps/plugin-cli@2.0.0-beta.7':
     dependencies:
       '@tauri-apps/api': 2.0.0-beta.15
@@ -4296,6 +4324,10 @@ snapshots:
   '@tauri-apps/plugin-clipboard-manager@2.0.0-beta.2':
     dependencies:
       '@tauri-apps/api': 2.0.0-beta.4
+
+  '@tauri-apps/plugin-deep-link@2.0.0-beta.9':
+    dependencies:
+      '@tauri-apps/api': 2.0.0-beta.15
 
   '@tauri-apps/plugin-dialog@2.0.0-beta.7':
     dependencies:
@@ -4313,11 +4345,19 @@ snapshots:
     dependencies:
       '@tauri-apps/api': 2.0.0-beta.15
 
+  '@tauri-apps/plugin-log@2.0.0-beta.8':
+    dependencies:
+      '@tauri-apps/api': 2.0.0-beta.15
+
   '@tauri-apps/plugin-notification@2.0.0-beta.7':
     dependencies:
       '@tauri-apps/api': 2.0.0-beta.15
 
   '@tauri-apps/plugin-os@2.0.0-beta.7':
+    dependencies:
+      '@tauri-apps/api': 2.0.0-beta.15
+
+  '@tauri-apps/plugin-positioner@2.0.0-beta.7':
     dependencies:
       '@tauri-apps/api': 2.0.0-beta.15
 
