@@ -26,3 +26,10 @@ dist-ssr
 
 
 src-tauri/target/*
+src-tauri/wen/wenkey/android/upload-keystore.jks
+src-tauri/wen/wenkey/android/upload-keystore.jks.old
+src-tauri/wen/wenkey/android/upload-keystore.jks.old
+src-tauri/wen/wenkey/up/wen_tools.key.pub
+src-tauri/wen/wenkey/up/wen_tools.key
+src-tauri/wen/wenkey/android/upload-keystore.jks.old
+src-tauri/gen/android/wenkey.properties
