@@ -13,7 +13,7 @@
     "windows": [
       {
         "label": "main",
-        "url": "/index.html",
+        "url": "/",
         "center": true,
         "x": 0,
         "y": 0,
@@ -37,10 +37,22 @@
         "theme": "Light",
         "titleBarStyle": "Visible",
         "hiddenTitle": false,
-        "acceptFirstMouse": false
+        "acceptFirstMouse": false,
+        "alwaysOnBottom": false,
+        "closable": true,
+        "dragDropEnabled": true,
+        "maximized": false,
+        "shadow": true
       }
     ],
     "security": {
+      "assetProtocol": {
+        "enable": false,
+        "scope": []
+      },
+      "capabilities": [],
+      "dangerousDisableAssetCspModification": false,
+      "freezePrototype": false,
       "csp": null,
       "pattern": {
         "use": "brownfield"
@@ -49,15 +61,22 @@
     "trayIcon": {
       "iconAsTemplate": false,
       "iconPath": "icons/icon.png",
+      "id": "wen-icon",
       "title": "wen_tools",
-      "menuOnLeftClick": true
+      "menuOnLeftClick": true,
+      "tooltip": "a tools | 一个 工具箱"
     },
     "macOSPrivateApi": false
   },
   "bundle": {
     "active": true,
+    "android": {
+      "minSdkVersion": 24,
+      "versionCode": 1
+    },
     "category": "DeveloperTool",
     "copyright": "",
+    "createUpdaterArtifacts": "v1Compatible",
     "icon": [
       "icons/android/mipmap-hdpi/ic_launcher_foreground.png",
       "icons/android/mipmap-hdpi/ic_launcher_round.png",
@@ -111,6 +130,25 @@
       "icons/Square310x310Logo.png",
       "icons/StoreLogo.png"
     ],
+    "linux": {
+      "appimage": {
+        "bundleMediaFramework": false,
+        "files": {}
+      },
+      "deb": {
+        "files": {}
+      },
+      "rpm": {
+        "epoch": 0,
+        "files": {},
+        "release": "1"
+      }
+    },
+    "licenseFile": "wen/license.txt",
+    "longDescription": "一个普普通通的工具箱程序，全力开发中 | An ordinary toolbox program,In full development",
+    "publisher": "suwenmao",
+    "shortDescription": "一个普普通通的工具箱程序 | An ordinary toolbox program",
+    "targets": "all",
     "windows": {
       "allowDowngrades": true,
       "webviewFixedRuntimePath": null,
@@ -119,9 +157,12 @@
         "type": "offlineInstaller"
       },
       "nsis": {
+        "compression": "lzma",
         "displayLanguageSelector": true,
+        "headerImage": "wen/headimges.bmp",
         "installerIcon": "icons/icon.ico",
         "installMode": "both",
+        "sidebarImage": "wen/sidebarImage.bmp",
         "languages": [
           "English",
           "TradChinese",
@@ -130,25 +171,16 @@
         ]
       },
       "wix": {
+        "bannerPath": "wen/bannerPath.bmp",
+        "dialogImagePath": "wen/dialogImagesPath.bmp",
         "language": [
+          "en-US",
           "zh-CN",
           "zh-TW",
-          "en-US",
-          "ja-JP"
+          "jp-JP"
         ]
       }
-    },
-    "longDescription": "",
-    "macOS": {
-      "entitlements": null,
-      "exceptionDomain": "",
-      "frameworks": [],
-      "providerShortName": null,
-      "signingIdentity": null
-    },
-    "targets": "all",
-    "licenseFile": "wen/license.txt",
-    "createUpdaterArtifacts": "v1Compatible"
+    }
   },
   "plugins": {
     "cli": {

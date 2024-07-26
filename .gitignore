@@ -33,3 +33,4 @@ src-tauri/wen/wenkey/up/wen_tools.key.pub
 src-tauri/wen/wenkey/up/wen_tools.key
 src-tauri/wen/wenkey/android/upload-keystore.jks.old
 src-tauri/gen/android/wenkey.properties
+src-tauri/gen/android/keystore.properties

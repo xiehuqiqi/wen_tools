@@ -3,6 +3,9 @@
   "identifier": "main-capability",
   "description": "enables the default permissions",
   "windows": ["main"],
+  
+  
+  
   "permissions": [
     "app:default",
     "app:allow-app-hide",
@@ -11,11 +14,6 @@
     "app:allow-name",
     "app:allow-tauri-version",
     "app:allow-version",
-
-    "autostart:default",
-    "autostart:allow-enable",
-    "autostart:allow-disable",
-    "autostart:allow-is-enabled",
     
     "cli:default",
     "cli:allow-cli-matches",
@@ -302,6 +300,13 @@
     "fs:allow-video-write",
     "fs:allow-video-write-recursive",
 
+    "http:default",
+    "http:allow-fetch",
+    "http:allow-fetch-cancel",
+    "http:allow-fetch-read-body",
+    "http:allow-fetch-send",
+
+
     "global-shortcut:default",
     "global-shortcut:allow-is-registered",
     "global-shortcut:allow-register",
@@ -387,8 +392,7 @@
     "path:allow-resolve",
     "path:allow-resolve-directory",
     
-    "positioner:default",
-    "positioner:allow-move-window",
+    
     
     "resources:default",
     "resources:allow-close",
