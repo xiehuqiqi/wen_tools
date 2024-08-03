@@ -2,7 +2,7 @@
  * @Author: suwenmao shenming26@outlook.com
  * @Date: 2024-07-12 14:21:08
  * @LastEditors: suwenmao shenming26@outlook.com
- * @LastEditTime: 2024-07-23 15:27:07
+ * @LastEditTime: 2024-07-27 09:35:44
  * @FilePath: \wen_tools\src\layout\WenLayoutMain.vue
  * @Description: 
  * 
@@ -69,7 +69,7 @@
         </a-col>
       </a-row>
     </a-layout-header>
-    <a-layout-content class="wen-layout-main-main">
+    <a-layout-content class="wen-layout-main-main" style="overflow: scroll; overflow-x: hidden;">
       <div class="wen-layout-main-main-ye">
         <router-view />
       </div>
@@ -98,17 +98,18 @@ function wen_theme() {
 <style>
 .wen-layout .wen-layout-main .wen-layout-main-main {
   background-color: var(--color-bg-1);
+  max-height: 100%;
 }
 
 .wen-layout .wen-layout-main .wen-layout-main-main .wen-layout-main-main-ye {
-  background-color: rgb(var(--arcoblue-2));
+  background-color: var(--color-bg-1);
   /* background-color: blue; */
-  height: calc(100% - 10px);
+  min-height: calc(100% - 10px);
   width: calc(100% - 10px);
   margin: 4px;
-  border-radius: 5px;
-  border-color: rgb(var(--orange-5));
   border-style: solid;
   border-width: 1px;
+  border-color: var(--color-bg-1);
+  overflow: hidden;
 }
 </style>

@@ -81,3 +81,31 @@ body {
   fill: currentColor;
   overflow: hidden;
 }
+
+*::-webkit-scrollbar {
+  width: 0px;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--color-bg-1); 
+  border-radius: 0px; 
+  border-width: 0px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--color-bg-1); 
+  border-width: 0px;
+}
+
+*::-webkit-scrollbar-track {
+  border-radius: 10px; 
+  background-color: var(--color-bg-1) ;
+  border-width: 0px;
+}
+
+* {
+  scrollbar-width: 0px;
+  scrollbar-base-color: var(--color-bg-1);
+  scrollbar-track-color: var(--color-bg-1);
+  scrollbar-arrow-color: var(--color-bg-1);
+}
